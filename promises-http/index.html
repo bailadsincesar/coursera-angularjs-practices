@@ -21,5 +21,17 @@
             </li>
         </ol>
     </div>
+
+    <hr>
+
+
+    <div ng-controller="MenuController">
+        <ul>
+            <li ng-repeat="category in categories">
+                {{ category.name }}
+            </li>
+        </ul>
+    </div>
+
 </body>
 </html>
