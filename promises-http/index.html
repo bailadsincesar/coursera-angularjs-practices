@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="ShoppingList">
+    <h1>Validate e-mail</h1>
+    <div ng-controller="ListController as List">
+        <input type="text" ng-model="List.name" placeholder="Name">
+        <input type="text" ng-model="List.email" placeholder="E-mail">
+        <button ng-click="List.addToList()">Submit</button>
+        <div ng-if="List.error != ''">
+            <p>{{ List.error }}</p>
+        </div>
+        <ol>
+            <li ng-repeat="contact in List.contacts">
+                {{ contact.email }}
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
