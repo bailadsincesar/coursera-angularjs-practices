@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="../angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <h1>The digest cycle</h1>
+    <div ng-controller="ShoppingListAddController as itemAdder">
+        <input type="text" ng-model="itemAdder.name" placeholder="Name">
+        <input type="text" ng-model="itemAdder.qty" placeholder="Quantity">
+        <button ng-click="itemAdder.addItem()">Add</button>
+
+        <div>
+            <ol>
+                <li ng-repeat="item in itemAdder.items">
+                    {{item.qty}} of {{ item.name }} <button ng-click="itemAdder.removeItem($index)">x</button>
+                </li>
+            </ol>
+        </div>
+
+        <p ng-if="itemAdder.error">Error: {{ itemAdder.error }}</p>
+
+    </div>
+
+
+
+
+</body>
+</html>
